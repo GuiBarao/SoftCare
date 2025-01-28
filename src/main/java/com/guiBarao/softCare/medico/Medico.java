@@ -15,6 +15,7 @@ public class Medico {
     private String email;
     private String cpf;
     private boolean ativo;
+    private Double precoConsulta;
 
     public Medico() {}
 
@@ -26,6 +27,7 @@ public class Medico {
         this.email = dados.email();
         this.cpf = dados.cpf();
         this.ativo = true;
+        this.precoConsulta = dados.preco_consulta();
     }
 
     public void excluir()
@@ -49,6 +51,15 @@ public class Medico {
         {
             this.telefone = dados.telefone();
         }
+
+        if(dados.preco_consulta() != null)
+        {
+            this.precoConsulta = dados.preco_consulta();
+        }
+    }
+
+    public double getPrecoConsulta() {
+        return precoConsulta;
     }
 
     public long getId() {

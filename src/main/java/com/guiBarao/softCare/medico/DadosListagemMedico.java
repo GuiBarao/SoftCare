@@ -8,11 +8,13 @@ public record DadosListagemMedico(
 
         String email,
 
-        String cpf
+        String cpf,
+
+        Double precoConsulta
 ) {
 
     public DadosListagemMedico(Medico dados) {
-        this(dados.getNome(), dados.getTelefone(), dados.getEmail(), dados.getCpf());
+        this(dados.getNome(), dados.getTelefone(), dados.getEmail(), dados.getCpf(), dados.getPrecoConsulta());
     }
 
 }

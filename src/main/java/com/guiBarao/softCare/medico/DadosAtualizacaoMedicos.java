@@ -15,6 +15,8 @@ public record DadosAtualizacaoMedicos(
         @Email
         String email,
 
-        String nome
+        String nome,
+
+        Double preco_consulta
 
 ) {}

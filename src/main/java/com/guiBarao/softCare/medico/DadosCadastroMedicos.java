@@ -21,5 +21,8 @@ public record DadosCadastroMedicos(
 
         @NotNull
         @Pattern(regexp = "\\d{11}")
-        String cpf
+        String cpf,
+
+        @NotNull
+        Double preco_consulta
 ) {}
