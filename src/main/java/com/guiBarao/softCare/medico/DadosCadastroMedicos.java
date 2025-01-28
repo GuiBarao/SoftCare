@@ -1,28 +1,25 @@
-package com.guiBarao.softCare.paciente;
+package com.guiBarao.softCare.medico;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
-import org.springframework.format.annotation.DateTimeFormat;
 
-import java.time.LocalDate;
-
-public record DadosCadastroPacientes(
-
+public record DadosCadastroMedicos(
         @NotNull
         String nome,
 
+        @Pattern(regexp = "\\d{6,15}")
         @NotNull
-        @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-        LocalDate dataNascimento,
-
-        @Email
-        String email,
+        String crm,
 
         @NotNull
         @Pattern(regexp = "\\d{8,19}")
         String telefone,
 
+        @Email
+        String email,
+
+        @NotNull
         @Pattern(regexp = "\\d{11}")
         String cpf
 ) {}
