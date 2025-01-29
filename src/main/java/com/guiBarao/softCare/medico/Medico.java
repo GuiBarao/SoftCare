@@ -15,6 +15,8 @@ public class Medico {
     private String email;
     private String cpf;
     private boolean ativo;
+
+    @Column(name = "preco_consulta")
     private Double precoConsulta;
 
     public Medico() {}
