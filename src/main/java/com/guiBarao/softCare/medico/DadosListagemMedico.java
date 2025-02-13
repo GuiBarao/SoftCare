@@ -2,6 +2,8 @@ package com.guiBarao.softCare.medico;
 
 public record DadosListagemMedico(
 
+        Long id,
+
         String nome,
 
         String telefone,
@@ -14,7 +16,8 @@ public record DadosListagemMedico(
 ) {
 
     public DadosListagemMedico(Medico dados) {
-        this(dados.getNome(), dados.getTelefone(), dados.getEmail(), dados.getCpf(), dados.getPrecoConsulta());
+        this(dados.getId(), dados.getNome(), dados.getTelefone(),
+                dados.getEmail(), dados.getCpf(), dados.getPrecoConsulta());
     }
 
 }

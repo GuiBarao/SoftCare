@@ -17,7 +17,7 @@ import java.util.List;
 public class MedicoController {
 
     @Autowired
-    MedicoRepository repository;
+    private MedicoRepository repository;
 
     @Transactional
     @PostMapping

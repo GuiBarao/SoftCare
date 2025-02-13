@@ -13,6 +13,8 @@ public class Paciente {
     private long id;
 
     private String nome;
+
+    @Column(name = "data_nascimento")
     private LocalDate dataNascimento;
     private String email;
     private String telefone;
