@@ -7,6 +7,7 @@ import java.time.LocalTime;
 
 public record DadosListagemConsulta(
 
+        long id,
         long idMedico,
         long idPaciente,
         LocalDate data,
@@ -17,7 +18,7 @@ public record DadosListagemConsulta(
 
     public DadosListagemConsulta (Consulta dados)
     {
-        this(dados.getIdMedico(), dados.getIdPaciente(), dados.getData(), dados.getHorario(), dados.getStatus());
+        this(dados.getId(), dados.getIdMedico(), dados.getIdPaciente(), dados.getData(), dados.getHorario(), dados.getStatus());
     }
 
 }

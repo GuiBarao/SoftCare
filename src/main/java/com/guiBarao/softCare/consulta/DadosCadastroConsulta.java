@@ -7,7 +7,6 @@ import java.time.LocalTime;
 
 public record DadosCadastroConsulta(
 
-        @NotNull
         long idPaciente,
 
         @NotNull

@@ -1,9 +1,6 @@
 package com.guiBarao.softCare.controllers;
 
-import com.guiBarao.softCare.consulta.Consulta;
-import com.guiBarao.softCare.consulta.DadosAtualizacaoConsulta;
-import com.guiBarao.softCare.consulta.DadosCadastroConsulta;
-import com.guiBarao.softCare.consulta.DadosListagemConsulta;
+import com.guiBarao.softCare.consulta.*;
 import com.guiBarao.softCare.repository.ConsultaRepository;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
@@ -12,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping("/consultas")
+@RequestMapping("/pacientes/{idPacientes}/consultas")
 @RestController
 public class ConsultaController {
 
@@ -21,13 +18,17 @@ public class ConsultaController {
 
     @PostMapping
     @Transactional
-    public void cadastrar(@Valid @RequestBody DadosCadastroConsulta consulta) {
+    public void cadastrar(@Valid @RequestBody DadosCadastroConsulta consulta, @PathVariable Long idPacientes) {
+
+        DadosCadastroConsulta consultaIdPaciente = new DadosCadastroConsulta(idPacientes, consulta.idMedico(),
+                                                                                consulta.data(), consulta.horario());
+
         repository.save(new Consulta (consulta));
     }
 
     @GetMapping
     public List<DadosListagemConsulta> listar() {
-        return repository.findAll().stream().map(DadosListagemConsulta::new).toList();
+        return repository.findAllByStatus(StatusConsulta.MARCADA).stream().map(DadosListagemConsulta::new).toList();
 
     }
 
