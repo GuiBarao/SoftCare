@@ -24,7 +24,7 @@ public class Internacao {
     public Internacao(DadosCadastroInternacao dados)
     {
         this.idPaciente = dados.idPaciente();
-        this.dataInicio = dados.dataInicio();
+        this.dataInicio = LocalDate.now();
     }
 
     public void atualizarInfo(DadosAtualizacaoInternacao dados)
