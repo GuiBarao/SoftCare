@@ -11,6 +11,8 @@ public record DadosAtualizacaoMedicamento(
 
         Long quantEstoque,
 
+        Long maximoEstoque,
+
         String descricao
 
 ) {}

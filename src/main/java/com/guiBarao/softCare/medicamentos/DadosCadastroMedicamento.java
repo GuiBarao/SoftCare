@@ -11,6 +11,10 @@ public record DadosCadastroMedicamento(
         float preco,
 
         @NotNull
-        String descricao
+        String descricao,
+
+        @NotNull
+        Long estoqueMaximo
+
 
 ) {}

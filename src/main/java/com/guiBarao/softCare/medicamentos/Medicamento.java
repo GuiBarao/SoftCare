@@ -13,6 +13,7 @@ public class Medicamento {
     private float preco;
     private String descricao;
     private long quantEstoque;
+    private Long estoqueMaximo;
     private boolean ativo;
 
     public Medicamento() {}
@@ -22,6 +23,7 @@ public class Medicamento {
         this.nome = dados.nome();
         this.preco = dados.preco();
         this.descricao = dados.descricao();
+        this.estoqueMaximo = dados.estoqueMaximo();
         this.quantEstoque = 0;
         this.ativo = true;
     }
@@ -41,6 +43,11 @@ public class Medicamento {
         if(dados.quantEstoque() != null)
         {
             this.quantEstoque = dados.quantEstoque();
+        }
+
+        if(dados.maximoEstoque() != null)
+        {
+            this.estoqueMaximo = dados.maximoEstoque();
         }
     }
 
@@ -67,6 +74,10 @@ public class Medicamento {
 
     public long getQuantEstoque() {
         return quantEstoque;
+    }
+
+    public Long getEstoqueMaximo() {
+        return estoqueMaximo;
     }
 
     public boolean isAtivo() {
